@@ -1,0 +1,16 @@
+# Dossiers générés par .NET
+bin/
+obj/
+
+# Dossiers Visual Studio / VS Code
+.vs/
+.vscode/
+
+# Fichiers utilisateur
+*.user
+*.suo
+
+# Base SQLite locale
+*.db
+*.db-shm
+*.db-wal
