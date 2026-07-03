@@ -1,0 +1,14 @@
+li {
+    color : blue ; 
+}
+body{
+    background: url("/images/menu_background.jpg") no-repeat; 
+    background-size: cover;
+    background-position: center;
+
+}
+/*c'est avec # qu'on appelle l'id (html -> css) */
+#small_logo{
+    margin-left: 35px; 
+    margin-top: 25px;
+}
