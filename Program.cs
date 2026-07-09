@@ -1,8 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using pizza_mama.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+//la config pour . ou , niveau prix
+var cultureInfo = new CultureInfo("fr-FR"); 
+cultureInfo.NumberFormat.NumberDecimalSeparator = "."; 
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo; 
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -26,7 +32,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Admin";
     });
 builder.Services.AddAuthorization();
-
+//je dois rajouter le controller (c'est a dire le srvice dans la fonction globale qui est program.cs)
+builder.Services.AddControllers(); 
 var app = builder.Build();
 
 // Test pour créer la base SQLite si elle n'existe pas
@@ -49,6 +56,8 @@ else
 app.UseHttpsRedirection();
 
 app.UseRouting();
+//j'active le systeme controller
+app.MapControllers();
 
 app.UseAuthentication(); 
 // Active le système d'autorisation.

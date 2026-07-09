@@ -2,13 +2,83 @@ li {
     color : blue ; 
 }
 body{
-    background: url("/images/menu_background.jpg") no-repeat; 
+    /*rendre l'image du fond un peu sombre*/ 
+    background:
+        linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url("/images/menu_background.jpg");
     background-size: cover;
-    background-position: center;
-
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: Arial;
+    margin: 0px;
+    /* je dis que la couleur du texte parr defaut est white*/
+    color: white;
+    background-attachment: fixed;
+}
+body.homePage{
+    /*background-image pour pas ecraser le style du body*/
+      background-image: url("/images/main_background.jpg") ;
+}
+a.homePage{
+    color: red;
+    font-size: 18px;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
 }
 /*c'est avec # qu'on appelle l'id (html -> css) */
 #small_logo{
     margin-left: 35px; 
     margin-top: 25px;
+
+
+}
+h1{
+    color: white;
+    background-color: #dd7835;
+    display: inline;
+    padding: 8px 22px;
+}
+.menu_title{
+    margin-top: 45px; 
+    margin-bottom: 50px;
+}
+.menu_list{
+    margin-left : 50px; 
+}
+.menu_list_item{
+    font-weight: bold;
+    margin: 30px 0px;
+}
+.menu_list_title{
+    font-weight: bold;
+}
+.menu_list_price{
+    color : #dd7835;
+    margin-left: 8px;
+}
+.menu_list_ingredients{
+    color: #d8d8d8;
+    font-size: 14px;
+    margin-top: 4px; 
+    display: block;
+    /*limiter la zone du texte*/ 
+    width:320px;
+}
+.menu_list_badge{
+    color : black; 
+    background-color: #dd7835;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 3px 8px;
+    /*Pour rajouter une margin top il faut etre en display : inline-block*/
+    display: inline-block;
+    margin-top : 6px; 
+}
+.centered{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
